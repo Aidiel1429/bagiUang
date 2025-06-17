@@ -38,7 +38,7 @@ Kamu sebagai pengguna bebas menentukan sendiri **kategori dan persentase pembagi
 - PHP >= 8.1
 - Composer
 - Node.js & NPM
-- MySQL / SQLite
+- MySQL
 
 ### Langkah Instalasi
 
