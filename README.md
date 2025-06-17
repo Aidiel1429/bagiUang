@@ -1,6 +1,6 @@
 # 💰 BagiUang – Aplikasi Pembagian Uang Otomatis (Laravel + Livewire)
 
-**BagiUang** adalah aplikasi web berbasis Laravel dan Livewire yang membantu pengguna membagi pemasukan tidak tetap ke dalam beberapa kategori penting seperti:
+**BagiUang** adalah aplikasi web berbasis Laravel dan Livewire yang membantu pengguna membagi pemasukan ke dalam beberapa kategori penting seperti:
 - Uang sehari-hari (jajan)
 - Dana darurat
 - Tabungan umum
