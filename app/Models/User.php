@@ -6,6 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\UangMasuk;
+use App\Models\Alokasi;
 
 class User extends Authenticatable
 {
@@ -22,6 +25,16 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    public function saldoMasuk(): HasMany
+    {
+        return $this->hasMany(UangMasuk::class);
+    }
+
+    public function alokasi(): HasMany
+    {
+        return $this->hasMany(Alokasi::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

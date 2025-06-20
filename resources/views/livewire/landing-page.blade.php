@@ -264,23 +264,25 @@
                 <div class="mt-5 xl:mt-16">
                     <div class="collapse bg-base-100 border-base-300 border text-start">
                         <input type="checkbox" />
-                        <div class="collapse-title font-semibold xl:text-2xl">Apakah BagiUang benar-benar gratis?</div>
+                        <div class="collapse-title font-semibold xl:text-2xl">Beneran gratis, nih?</div>
                         <div class="collapse-content xl:text-xl">
-                            Ya, 100% gratis tanpa biaya langganan. Kami percaya semua orang berhak mengatur keuangan dengan mudah tanpa beban biaya.
+                            Betul, penggunaan bagiUang sepenuhnya gratis. Nggak ada biaya langganan atau tambahan lainnya. Fokus kami adalah bantu kamu kelola keuangan dengan mudah dan nyaman.
                         </div>
                     </div>
+
                     <div class="collapse bg-base-100 border-base-300 border text-start mt-3">
                         <input type="checkbox" />
-                        <div class="collapse-title font-semibold xl:text-2xl">Apakah saya bisa mengatur kategori keuangan sendiri?</div>
+                        <div class="collapse-title font-semibold xl:text-2xl">Apakah bagiUang bisa dipakai di semua perangkat?</div>
                         <div class="collapse-content text-sm xl:text-xl">
-                            Bisa! Kamu bebas menentukan alokasi untuk kebutuhan sehari-hari, tabungan, investasi, dana darurat, dan lainnya sesuai gaya hidupmu.
+                            Saat ini, bagiUang memang dirancang khusus untuk tampilan mobile agar lebih praktis. Jika dibuka di perangkat lain seperti laptop atau tablet, tampilannya mungkin tidak maksimal.
                         </div>
                     </div>
+
                     <div class="collapse bg-base-100 border-base-300 border text-start mt-3">
                         <input type="checkbox" />
-                        <div class="collapse-title font-semibold xl:text-2xl">Perlu instal aplikasi?</div>
+                        <div class="collapse-title font-semibold xl:text-2xl">Harus instal dulu nggak?</div>
                         <div class="collapse-content text-sm xl:text-xl">
-                            Tidak. BagiUang berbasis web, jadi kamu bisa langsung pakai dari browser, baik di HP maupun laptop.
+                            Tidak perlu instalasi. Cukup buka lewat browser di HP kamu dan mulai gunakan. Simpel dan langsung bisa dipakai.
                         </div>
                     </div>
                 </div>

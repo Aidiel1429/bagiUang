@@ -56,8 +56,12 @@
             </div>
 
             <div class="font-semibold hidden gap-2 lg:flex">
-                <button class="px-7 py-2 rounded-full hover:bg-[#DBDBDB]/20 transition-colors cursor-pointer xl:py-[14px]">Masuk</button>
-                <button class="bg-[#1F2937] text-white px-7 py-2 rounded-full cursor-pointer hover:bg-[#10B981] transition-colors xl:py-[14px]">Daftar</button>
+                <a href="/login">
+                    <button class="px-7 py-2 rounded-full hover:bg-[#DBDBDB]/20 transition-colors cursor-pointer xl:py-[14px]">Masuk</button>
+                </a>
+                <a href="/daftar">
+                    <button class="bg-[#1F2937] text-white px-7 py-2 rounded-full cursor-pointer hover:bg-[#10B981] transition-colors xl:py-[14px]">Daftar</button>
+                </a>
             </div>
 
             <button @click="navbarOpen = !navbarOpen" class="lg:hidden">
@@ -114,12 +118,16 @@
             </div>
 
             <!-- CTA Buttons -->
-            <div class="py-3 px-3 text-center rounded-xl hover:bg-[#DBDBDB]/20 active:bg-[#DBDBDB]/20 transition-colors mt-10">
-                <p @click="navbarOpen = false; dropdownOpen = false">Masuk</p>
-            </div>
-            <div class="bg-[#1F2937] text-white py-3 px-3 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors">
-                <p @click="navbarOpen = false; dropdownOpen = false">Daftar</p>
-            </div>
+            <a href="/login">
+                <div class="py-3 px-3 text-center rounded-xl hover:bg-[#DBDBDB]/20 active:bg-[#DBDBDB]/20 transition-colors mt-10">
+                    <p @click="navbarOpen = false; dropdownOpen = false">Masuk</p>
+                </div>
+            </a>
+            <a href="/daftar">
+                <div class="bg-[#1F2937] text-white py-3 px-3 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors">
+                    <p @click="navbarOpen = false; dropdownOpen = false">Daftar</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
