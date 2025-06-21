@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          server-dir: . # <-- Berarti root dari akun FTP
+          server-dir: ./ # <-- Berarti root dari akun FTP
