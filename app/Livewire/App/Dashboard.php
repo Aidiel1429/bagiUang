@@ -19,25 +19,35 @@ class Dashboard extends Component
 
     public function render()
     {
-        $alokasi = Alokasi::withSum('riwayat as total_jumlah', 'jumlah')
-            ->where('user_id', $this->user_id)
-            ->get();
+        $alokasi = Alokasi::where('user_id', $this->user_id)
+            ->with('riwayat') // ambil semua riwayat
+            ->get()
+            ->map(function($alokasi) {
+                $alokasi->total_jumlah = $alokasi->riwayat->sum(function($item) {
+                    return $item->tipe === 'masuk' 
+                        ? $item->jumlah 
+                        : -$item->jumlah;
+                });
+                return $alokasi;
+            });
 
-        $riwayat = RiwayatAlokasi::orderBy('tanggal', 'desc')
+        $riwayat = RiwayatAlokasi::whereHas('alokasi', function ($query) {
+                $query->where('user_id', $this->user_id);
+            })
+            ->orderBy('tanggal', 'desc')           
+            ->orderBy('created_at', 'desc')        
             ->with(['alokasi' => function ($query) {
                 $query->select('id', 'nama', 'icon');
             }])
             ->take(5)
             ->get();
 
-        // Hitung total masuk
         $totalMasuk = RiwayatAlokasi::whereHas('alokasi', function ($query) {
                 $query->where('user_id', $this->user_id);
             })
             ->where('tipe', 'masuk')
             ->sum('jumlah');
 
-        // Hitung total keluar
         $totalKeluar = RiwayatAlokasi::whereHas('alokasi', function ($query) {
                 $query->where('user_id', $this->user_id);
             })
@@ -52,5 +62,6 @@ class Dashboard extends Component
             'totalSaldo' => $totalSaldo,
         ]);
     }
+
 
 }

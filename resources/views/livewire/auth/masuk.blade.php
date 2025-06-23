@@ -1,5 +1,5 @@
 <div class="min-h-screen flex items-center justify-center px-4">
-    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+    <div class="max-w-md w-full p-8">
         <h1 class="text-2xl font-bold text-emerald-600 text-center mb-2">BagiUang</h1>
         <h2 class="text-lg text-gray-800 text-center mb-6">Masuk untuk mulai atur keuanganmu</h2>
 

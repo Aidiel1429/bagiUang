@@ -66,5 +66,3 @@ php artisan migrate
 
 # 8. Jalankan server lokal
 php artisan serve
-
-triggerss

@@ -10,7 +10,7 @@
                 <i class="fa-solid fa-wallet text-xl"></i>
             </a>
 
-            <a href="/alokasi" class="{{ request()->is('alokasi') ? 'text-[#10B981] border-b-2 border-[#10B981]' : 'text-gray-600' }} pb-1">
+            <a href="/tambahSaldo" class="{{ request()->is('tambahSaldo') ? 'text-[#10B981] border-b-2 border-[#10B981]' : 'text-gray-600' }} pb-1">
                 <i class="fa-solid fa-plus text-xl"></i>
             </a>
 

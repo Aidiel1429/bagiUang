@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Models\Alokasi;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -35,6 +36,13 @@ class Daftar extends Component
                 'name' => $this->name,
                 'email' => $this->email,
                 'password' => Hash::make($this->password)
+            ]);
+
+            Alokasi::create([
+                'user_id' => $data->id,
+                'nama' => 'Alokasi Utama',
+                'persentase' => 0,
+                'icon' => 'fa-wallet',
             ]);
 
             if ($data) {

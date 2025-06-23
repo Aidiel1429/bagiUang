@@ -99,7 +99,9 @@ class Alokasi extends Component
 
     public function render()
     {
-        $alokasis = ModelsAlokasi::where('user_id', $this->user_id)->get();
+        $alokasis = ModelsAlokasi::where('user_id', $this->user_id)
+            ->where('nama', '!=', 'Alokasi Utama')
+            ->get();
         return view('livewire.app.alokasi', [
             'alokasis' => $alokasis,
         ]);

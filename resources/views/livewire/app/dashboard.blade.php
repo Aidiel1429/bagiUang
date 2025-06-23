@@ -1,4 +1,17 @@
 <div class="bg-[#F3F4F6] h-full min-h-screen max-w-sm container mx-auto pb-20">
+    @if (session()->has('success'))   
+        <div class="toast toast-top toast-end"  
+            x-data="{ show: true }" 
+            x-init="setTimeout(() => show = false, 5000)" 
+            x-show="show" 
+            x-transition 
+            role="alert" 
+        >
+            <div class="alert alert-success text-white">
+                <span>{{ session('success') }}</span>
+            </div>
+        </div>        
+    @endif
     <div>
         <livewire:app.sidebar />
     </div>
@@ -18,12 +31,14 @@
             <div class="mt-3 overflow-x-auto whitespace-nowrap no-scrollbar">
                 <div class="inline-flex gap-4 w-full">
                     @forelse ($alokasi as $item)
-                        <div class="bg-white p-5 rounded-2xl max-w-[250px] min-w-[250px]">
-                            <i class="fa-solid {{ $item->icon }} text-3xl"></i>
-                            <p class="text-[#5C5C5C] font-semibold mt-2 text-base">{{ $item->nama }}</p>
-                            <p class="font-bold text-xl mt-2">Rp. {{ number_format($item->total_jumlah ?? 0, 0, ',', '.') }}</p>
-                            <p class="text-end mt-3 font-semibold text-[#10B981]">{{ $item->persentase }}%</p>
-                        </div>
+                        <a href="/alokasi/{{ $item->nama }}">
+                            <div class="bg-white p-5 rounded-2xl max-w-[250px] min-w-[250px]">
+                                <i class="fa-solid {{ $item->icon }} text-3xl"></i>
+                                <p class="text-[#5C5C5C] font-semibold mt-2 text-base">{{ $item->nama }}</p>
+                                <p class="font-bold text-xl mt-2">Rp. {{ number_format($item->total_jumlah ?? 0, 0, ',', '.') }}</p>
+                                <p class="text-end mt-3 font-semibold text-[#10B981]">{{ $item->persentase }}%</p>
+                            </div>
+                        </a>
                     @empty
                         <div class="flex justify-center items-center w-full">
                             <p class="text-center">Tidak ada alokasi yang tersedia.</p>
@@ -38,14 +53,20 @@
                 @forelse ($riwayat as $item)
                     <div class="bg-white p-5 rounded-2xl flex items-center justify-between mt-3">
                         <div class="flex items-center gap-5">
-                            <i class="fa-solid fa-user text-xl"></i>
+                            <i class="fa-solid {{ $item->alokasi->icon }} text-xl"></i>
                             <div>
-                                <p class="text-sm font-semibold">{{ $item->nama }}</p>
-                                <p class="text-xs">{{ $item->tanggal }}</p>
+                                <p class="text-sm font-semibold truncate max-w-[150px] overflow-hidden whitespace-nowrap">
+                                    {{ $item->keterangan }}
+                                </p>
+                                <p class="text-xs">{{ \Carbon\Carbon::parse($item->tanggal)->locale('id')->translatedFormat('d F Y') }}</p>
                             </div>
                         </div>
                         <div class="flex flex-col items-end">
-                            <p class="text-sm font-semibold">+ Rp. {{ number_format($item->jumlah, 0, ',', '.') }}</p>
+                            <p class="text-sm font-semibold">@if ($item->tipe == 'masuk')
+                                +
+                            @else
+                                -
+                            @endif Rp. {{ number_format($item->jumlah, 0, ',', '.') }}</p>
                             <p class="text-xs items-end">{{ $item->alokasi->nama }}</p>
                         </div>
                     </div>

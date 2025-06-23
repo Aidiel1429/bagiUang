@@ -6,9 +6,11 @@
             <div class="text-center mt-7 lg:text-start">
                 <h1 class="font-extrabold text-xl md:text-3xl lg:text-[40px] xl:text-6xl">Atur Uangmu Tanpa Ribet</h1>
                 <p class="mt-3 text-sm md:text-base font-semibold lg:text-[16px] xl:text-[20px]">Bagi pemasukan kamu ke berbagai kategori sesuai kebutuhan. Bebas atur sendiri!</p>
-                <button class="w-fit bg-[#1F2937] text-white py-3 px-5 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors mt-4 xl:mt-11 cursor-pointer">
-                    <p class="font-semibold text-sm xl:text-[22px]">Coba Gratis</p>
-                </button>
+                <a href="/daftar">
+                    <button class="w-fit bg-[#1F2937] text-white py-3 px-5 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors mt-4 xl:mt-11 cursor-pointer">
+                        <p class="font-semibold text-sm xl:text-[22px]">Coba Gratis</p>
+                    </button>
+                </a>
             </div>
         </div>
 
@@ -17,9 +19,11 @@
             <div class="text-center mt-7 lg:text-start">
                 <h1 class="font-extrabold text-xl md:text-3xl lg:text-[35px] xl:text-6xl">Sering Ngerasa Gaji Cepat Habis?</h1>
                 <p class="mt-3 text-sm md:text-base lg:text-[16px] xl:text-[20px]">Gaji sering numpang lewat, niat nabung nggak jalan, dan bingung mulai dari mana? BagiUang bantu atur semuanya dengan mudah.</p>
-                <button class="w-fit bg-[#1F2937] text-white py-3 px-5 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors mt-4 xl:mt-11 cursor-pointer">
-                    <p class="font-semibold text-sm xl:text-[22px]">Temukan Solusinya</p>
-                </button>
+                <a href="/daftar">
+                    <button class="w-fit bg-[#1F2937] text-white py-3 px-5 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors mt-4 xl:mt-11 cursor-pointer">
+                        <p class="font-semibold text-sm xl:text-[22px]">Temukan Solusinya</p>
+                    </button>
+                </a>
             </div>
             <img src="img2.svg" alt="Image 2" class="w-full lg:w-[300px] xl:w-[500px] hidden lg:block">
         </div>
@@ -292,9 +296,11 @@
             <div class="text-center mt-7">
                 <h1 class="font-extrabold text-3xl lg:text-5xl xl:text-[64px]">Siap Atur Uangmu Sendiri?</h1>
                 <p class="mt-5 text-[14px] lg:text-xl lg:mt-8 xl:text-[32px] xl:px-52">Saatnya kendalikan keuanganmu sendiri. Mulai langkah kecil hari ini untuk masa depan yang lebih tenang.</p>
-                <button class="w-fit bg-[#1F2937] text-white py-3 px-5 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors mt-4 lg:mt-8 xl:mt-11 cursor-pointer">
-                    <p class="font-semibold text-sm lg:text-xl xl:text-[22px]">Mulai Sekarang – Gratis, Tanpa Ribet</p>
-                </button>
+                <a href="/daftar">
+                    <button class="w-fit bg-[#1F2937] text-white py-3 px-5 text-center rounded-xl active:bg-[#10B981] hover:bg-[#10B981] transition-colors mt-4 lg:mt-8 xl:mt-11 cursor-pointer">
+                        <p class="font-semibold text-sm lg:text-xl xl:text-[22px]">Mulai Sekarang – Gratis, Tanpa Ribet</p>
+                    </button>
+                </a>
                 <p class="mt-7 text-[14px] lg:text-lg lg:mt-8 xl:text-xl">Langsung akses via browser. Tanpa instalasi, tanpa pusing.</p>
             </div>
         </div>
