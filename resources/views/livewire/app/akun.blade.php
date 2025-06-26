@@ -1,6 +1,6 @@
 <div class="bg-gray-100 h-screen max-w-sm mx-auto block sm:hidden">
     <div class="bg-white rounded-b-3xl p-5 flex items-center justify-between">
-        <a href="/dasbor">
+        <a href="/dasbor" wire:navigate>
             <div class="bg-slate-500/10 w-10 h-10 flex items-center justify-center rounded-2xl">
                 <i class="fa-solid fa-chevron-left text-xl"></i>
             </div>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="mt-5 space-y-3">
-            <a href="/akun/edit-profil"
+            <a href="/akun/edit-profil" wire:navigate
                 class="bg-white rounded-xl flex items-center justify-between p-4 hover:bg-slate-100 transition">
                 <div class="flex items-center space-x-3">
                     <i class="fa-solid fa-user-pen text-slate-600"></i>
@@ -27,7 +27,7 @@
                 </div>
             </a>
 
-            <a href="/akun/hapus-akun"
+            <a href="/akun/hapus-akun" wire:navigate
                 class="bg-white rounded-xl flex items-center justify-between p-4 hover:bg-slate-100 transition">
                 <div class="flex items-center space-x-3 text-red-600">
                     <i class="fa-solid fa-user-slash"></i>
@@ -38,6 +38,4 @@
             <livewire:auth.keluar/>
         </div>
     </div>
-
-    {{-- mdoal hapus akun --}}
 </div>

@@ -27,7 +27,7 @@
     @endif
     <div class=" px-5 py-5">
         <div class="flex items-center justify-between mb-5">
-            <a href="/dasbor">
+            <a href="/dasbor" wire:navigate>
                 <div class="bg-slate-500/10 w-10 h-10 flex items-center justify-center rounded-2xl">
                     <i class="fa-solid fa-chevron-left text-xl"></i>
                 </div>
