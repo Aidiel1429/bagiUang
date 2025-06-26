@@ -17,7 +17,9 @@ class GrafikAlokasi extends Component
 
     public function render()
     {
-        $alokasi = Alokasi::where('user_id', $this->user_id)->get();
+        $alokasi = Alokasi::where('user_id', $this->user_id)
+            ->where('nama', '!=', 'Alokasi Utama')
+            ->get();
 
         return view('livewire.app.grafik.grafik-alokasi', [
             'alokasi' => $alokasi,

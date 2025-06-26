@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\App\Akun;
+use App\Livewire\App\Akun\EditProfil;
+use App\Livewire\App\Akun\HapusAkun;
 use App\Livewire\App\Alokasi;
 use App\Livewire\App\Dashboard;
 use App\Livewire\App\ShowAlokasi;
@@ -26,5 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/alokasi/{nama}', ShowAlokasi::class)->name('alokasi.detail');
     Route::get('/tambahSaldo', TambahSaldo::class)->name('tambahSaldo');
     Route::get('/transaksi', Transaksi::class)->name('transaksi');
-    Route::get('akun', Akun::class)->name('akun');
+    Route::get('/akun', Akun::class)->name('akun');
+    Route::get('/akun/edit-profil', EditProfil::class)->name('akun.editProfil');
+    Route::get('/akun/hapus-akun', HapusAkun::class)->name('akun.hapusAkun');
 });

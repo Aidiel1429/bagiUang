@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Masuk extends Component
 {
-    public $email, $password;
+    public $email, $password, $remember = false;
     public $error;
 
     public function render()
@@ -32,15 +32,15 @@ class Masuk extends Component
         try {
             if (Auth::attempt([
                 'email' => $this->email,
-                'password' => $this->password
-            ])) {
+                'password' => $this->password,
+            ], $this->remember)) {
                 session()->regenerate();
                 return redirect()->intended('/dasbor');
             }
 
             $this->addError('email', 'Email atau password salah.');
         } catch (\Throwable $th) {
-            session()->flash('error', 'Terjadi kesalahan. Silahkan coba lagi.');
+            session()->flash('error', 'Terjadi kesalahan. Silakan coba lagi.');
         }
     }
 }

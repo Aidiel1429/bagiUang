@@ -80,6 +80,7 @@
                 <div class="mt-3">
                     <label for="persentaseAlokasi" class="label">Persentase Alokasi</label>
                     <input wire:model="persentase" type="text" class="px-3 py-2 w-full border border-gray-700 outline-[#10B981] rounded-lg mt-1" />
+                    <p class="text-xs mt-1">* Isi dengan angka tanpa persen</p>
                     @error('persentase') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                 </div>
                 <div class="modal-action">

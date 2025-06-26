@@ -12,6 +12,19 @@
             </div>
         </div>        
     @endif
+    @if (session()->has('error'))   
+        <div class="toast toast-top toast-end"  
+            x-data="{ show: true }" 
+            x-init="setTimeout(() => show = false, 5000)" 
+            x-show="show" 
+            x-transition 
+            role="alert" 
+        >
+            <div class="alert alert-error text-white">
+                <span>{{ session('error') }}</span>
+            </div>
+        </div>        
+    @endif
     <div>
         <livewire:app.sidebar />
     </div>
@@ -32,11 +45,13 @@
                 <div class="inline-flex gap-4 w-full">
                     @forelse ($alokasi as $item)
                         <a href="/alokasi/{{ $item->nama }}">
-                            <div class="bg-white p-5 rounded-2xl max-w-[250px] min-w-[250px]">
+                            <div class="bg-white p-5 rounded-2xl min-h-[175px] max-w-[250px] min-w-[250px]">
                                 <i class="fa-solid {{ $item->icon }} text-3xl"></i>
                                 <p class="text-[#5C5C5C] font-semibold mt-2 text-base">{{ $item->nama }}</p>
                                 <p class="font-bold text-xl mt-2">Rp. {{ number_format($item->total_jumlah ?? 0, 0, ',', '.') }}</p>
-                                <p class="text-end mt-3 font-semibold text-[#10B981]">{{ $item->persentase }}%</p>
+                                @if ($item->nama != 'Alokasi Utama')                                   
+                                    <p class="text-end mt-3 font-semibold text-[#10B981]">{{ $item->persentase }}%</p>                                    
+                                @endif
                             </div>
                         </a>
                     @empty
@@ -51,18 +66,18 @@
             <h1 class="text-lg font-bold">Transaksi Terbaru</h1>
             <div class="mt-3">
                 @forelse ($riwayat as $item)
-                    <div class="bg-white p-5 rounded-2xl flex items-center justify-between mt-3">
-                        <div class="flex items-center gap-5">
-                            <i class="fa-solid {{ $item->alokasi->icon }} text-xl"></i>
+                    <div class="bg-white p-4 rounded-2xl flex items-center justify-between mt-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid {{ $item->alokasi->icon }} text-base"></i>
                             <div>
-                                <p class="text-sm font-semibold truncate max-w-[150px] overflow-hidden whitespace-nowrap">
+                                <p class="text-[13px] font-semibold truncate max-w-[110px] overflow-hidden whitespace-nowrap">
                                     {{ $item->keterangan }}
                                 </p>
                                 <p class="text-xs">{{ \Carbon\Carbon::parse($item->tanggal)->locale('id')->translatedFormat('d F Y') }}</p>
                             </div>
                         </div>
                         <div class="flex flex-col items-end">
-                            <p class="text-sm font-semibold">@if ($item->tipe == 'masuk')
+                            <p class="text-xs font-semibold">@if ($item->tipe == 'masuk')
                                 +
                             @else
                                 -
